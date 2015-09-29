@@ -17,12 +17,15 @@
 
         <input type="text" id="ghusername" ng-model="username" placeholder="Github username...">
         <a href="#" id="ghsubmitbtn" ng-click="getGitInfo()">Pull User Data</a>
+            <!-- AngularJS directive ng-click is added to the button, which is just a styled link and set to call getGitInfo() -->
 
         <div id="ghapidata" class="clearfix"></div>
     </div>
 
 <script>
    function GitHubCtrl($scope, $http) {
+       $scope.getGitInfo = function() {
+       }
    }
 </script>
 

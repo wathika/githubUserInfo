@@ -25,7 +25,18 @@
 <script>
    function GitHubCtrl($scope, $http) {
        $scope.getGitInfo = function() {
-       }
+           $scope.userNotFound = false;
+           $scope.loaded = false;
+
+           $http.get("https://api.github.com/users/" + $scope.username)
+              .success(function (data) {
+                 $scope.user = data;
+                 $scope.loaded = true;
+              })
+              .error(function () {
+                 $scope.userNotFound = true;
+              })
+               }
    }
 </script>
 

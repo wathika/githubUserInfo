@@ -37,6 +37,19 @@
          Followers: {{ user.followers }} - Following: {{ user.following }}<br>Repos: {{ user.public_repos }}</p>
       </div>
 
+    <!-- ng-hide  and ng-show  are used to either show a message stating no repositories were found or to list them -->
+    <div class="repolist clearfix">
+        <p ng-hide="reposFound">No repos!</p>
+
+        <!-- If there are repositories we just iterate over the list of repos using ng-repeat  and create a <li> for each one -->
+        <div ng-show="reposFound">
+            <p><strong>Repos List:</strong></p>
+            <ul ng-repeat="repo in repos">
+                <li><a href="{{repo.html_url}}" target="_blank"> {{repo.name}} </a></li>
+            </ul>
+        </div>
+    </div>
+
 
 
 <script>
@@ -53,7 +66,12 @@
               .error(function () {
                  $scope.userNotFound = true;
               })
-               }
+           $http.get("https://api.github.com/users/"+ $scope.username + "/repos")
+               .success(function (data) {
+                    $scope.repos = data;
+                    $scope.reposFound = data.length > 0;
+                })
+           }
    }
 </script>
 

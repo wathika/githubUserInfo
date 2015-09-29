@@ -11,6 +11,16 @@
 <!--    behavior of content under this element will be managed using the GitHubCtrl class-->
 <body ng-controller="GitHubCtrl">
 
+    <div>
+        <h1>Simple Github API Webapp</h1>
+        <p>Enter a single Github username below and click the button to display profile info.</p>
+
+        <input type="text" id="ghusername" ng-model="username" placeholder="Github username...">
+        <a href="#" id="ghsubmitbtn" ng-click="getGitInfo()">Pull User Data</a>
+
+        <div id="ghapidata" class="clearfix"></div>
+    </div>
+
 <script>
    function GitHubCtrl($scope, $http) {
    }

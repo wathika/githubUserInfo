@@ -1,0 +1,22 @@
+{
+  "name": "githubApi",
+  "version": "1.0.0",
+  "description": "playing around with github api",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wathika/githubUserInfo.git"
+  },
+  "author": "wathika",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wathika/githubUserInfo/issues"
+  },
+  "homepage": "https://github.com/wathika/githubUserInfo",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}
